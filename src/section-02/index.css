@@ -5,6 +5,65 @@
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
-    background: #24282E;
-    color: white;
+    background: white;
+    color: black;
+}
+
+header {
+  background-color: #F54F50;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+nav > img {
+  width: 30px;
+}
+
+nav > span {
+  margin-left: 5px;
+  color: white;
+}
+
+article.journal-entry {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+article > img {
+  width: 200px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.entry-content-container {
+  padding: 10px;
+}
+
+.entry-content-container > div > p:first-of-type {
+  font-weight: bold;
+}
+
+.entry-location-container {
+  display: flex;
+  align-items: center;
+}
+
+.entry-location-container > img {
+  width: 15px;
+  margin-right: 10px;
+}
+
+.entry-location-container > span {
+  margin-right: 10px;
+}
+
+span > a {
+  color: #F54F50;
 }
