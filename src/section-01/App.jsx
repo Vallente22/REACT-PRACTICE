@@ -7,7 +7,7 @@
 //import Lesson18 from './Lessons/Lesson18.jsx'
 //import Lesson19 from './Lessons/Lesson19.jsx'
 import Navbar from './components/Navbar.jsx'
-import Main from './components/Main.jsx'
+import Main from './components/Main.jsx' 
 
 
 const App = () => {
