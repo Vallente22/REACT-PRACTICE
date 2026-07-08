@@ -9,7 +9,9 @@ body {
     color: black;
 }
 
-/* CSS FROM PREVIOUS LESSONS 2 & 3
+/* CSS For Travel Journal LESSONS 2 & 3*/
+
+
 header {
   background-color: #F54F50;
 }
@@ -38,13 +40,15 @@ article.journal-entry {
 }
 
 article > img {
-  width: 200px;
+  width: 150px;
+  height: 225px;
   margin: 10px;
   border-radius: 5px;
+  object-fit: cover;
 }
 
 .entry-content-container {
-  padding: 10px;
+  margin: 10px;
 }
 
 .entry-content-container > div > p:first-of-type {
@@ -68,8 +72,8 @@ article > img {
 span > a {
   color: #F54F50;
 }
-*/
 
+/* CSS for Contacts 
 .contacts {
   display: flex;
   justify-content: center;
@@ -117,3 +121,5 @@ span > a {
   font-size: 12px;
   color: #2B283A;
 }
+
+*/
