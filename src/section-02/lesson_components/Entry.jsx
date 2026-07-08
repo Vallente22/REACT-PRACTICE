@@ -3,8 +3,8 @@ const Entry = (props) => {
     <>
       <article className="journal-entry">
         <img 
-          src={props.img.src} 
-          alt={props.img.alt} 
+          src={props.entry.img.src} 
+          alt={props.entry.img.alt} 
         />
         <div className="entry-content-container">
           <div className="entry-location-container">
@@ -13,15 +13,14 @@ const Entry = (props) => {
               alt="Marker Logo" 
             />
             <span>
-              {props.country}
+              {props.entry.country}
             </span>
-            <a href={props.googleMapsLink} target="_blank" rel="noopener noreferrer">View on Google Maps</a>
+            <a href={props.entry.googleMapsLink} target="_blank" rel="noopener noreferrer">View on Google Maps</a>
           </div>
-          
           <div>
-            <h2>{props.title}</h2>
-            <p>{props.dates}</p>
-            <p>{props.text}</p>
+            <h2>{props.entry.title}</h2>
+            <p>{props.entry.dates}</p>
+            <p>{props.entry.text}</p>
           </div>
         </div>
       </article>

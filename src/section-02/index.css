@@ -37,6 +37,7 @@ article.journal-entry {
   align-items: center;
   justify-content: center;
   padding: 20px;
+  margin-bottom: 36px;
 }
 
 article > img {
@@ -121,5 +122,4 @@ span > a {
   font-size: 12px;
   color: #2B283A;
 }
-
 */
