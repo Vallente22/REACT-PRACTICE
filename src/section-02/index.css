@@ -91,7 +91,7 @@ span > a {
 
 .contact-card > img {
   width: 100%;
-  height: auto;
+  height: 200px;
   align-self: center;
   border-radius: 5px;
   object-fit: cover;
