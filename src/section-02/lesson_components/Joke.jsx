@@ -2,9 +2,9 @@ const Joke = (props) => {
   return (
     <>
       <article>
-        <h2>{props.setup}</h2>
-        <p>-{props.punchline}</p>
-        <h1>--</h1>
+        {props.setup && <h2>Setup: {props.setup}</h2>} 
+        <p>Punchline: {props.punchline}</p>
+        <hr/>
       </article>
     </>
   )

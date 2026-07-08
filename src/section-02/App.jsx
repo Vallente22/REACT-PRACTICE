@@ -6,12 +6,12 @@
 //import Lesson12 from './Lessons/Lesson12.jsx';
 //import Lesson13 from './Lessons/Lesson13.jsx';
 //import Lesson14 from './Lessons/Lesson14.jsx';
-import Lesson16 from './Lessons/Lesson16.jsx';
+import Lesson18 from './Lessons/Lesson18.jsx';
 
 const App = () => {
   return (
     <>
-      <Lesson16 />
+      <Lesson18 />
     </>
   )
 }
