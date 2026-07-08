@@ -1,4 +1,4 @@
-//challenge from lesson 10 use case of the parameter to get the prop
+//challenge from lesson 9 & 10 use case of the parameter to get the prop
 
 const Contact = (props) => {
   console.log(props)
