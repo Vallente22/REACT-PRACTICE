@@ -5,14 +5,10 @@ const Lesson14 = () => {
    */
   const isGoingOut = true
   
-  let answer = isGoingOut ? "yes" : "no" // 👈 Use ternary here
-  
-  // Remove the code below 👇 once your ternary is done
-  
   return (
     <main>
       <h1 className="title">Do I feel like going out tonight?</h1>
-      <button className="value">{answer}</button>
+      <button className="value">{isGoingOut ? "yes" : "no"}</button>
     </main>
   )
 }
