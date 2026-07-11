@@ -5,7 +5,7 @@ const Lesson14 = () => {
    */
   const isGoingOut = true
   
-  let answer = isGoingOut == true ? "yes" : "no" // 👈 Use ternary here
+  let answer = isGoingOut === true ? "yes" : "no" // 👈 Use ternary here
   
   // Remove the code below 👇 once your ternary is done
   
