@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { use, useState } from "react";
 
 const Lesson14prac = () => {
   const [count, setCount] = useState(0)
@@ -19,7 +19,7 @@ const Lesson14prac = () => {
 
   const [temp, setTemp] = useState(25)
 
-
+  const [evenOdd, setEvenOdd] = useState(0)
 
   return (
     <>
@@ -65,6 +65,10 @@ const Lesson14prac = () => {
         <h1>{`${temp}°C`}</h1>
         <button onClick={() => setTemp(prev => prev + 1)}>Hotter</button>
         <button onClick={() => setTemp(prev => prev - 1)}>Colder</button>
+        <hr />
+        <h1>Number: {evenOdd}</h1>
+        <h1>{evenOdd % 2 == 0 ? "Even" : "Odd"}</h1>
+        <button onClick={() => setEvenOdd(prev => prev + 1)}>Next</button>
         
 
       </main>
