@@ -9,14 +9,12 @@ const Lesson14prac = () => {
 
   const [isGoingOut, setIsGoingOut] = useState(true);
 
-  const goingOut = () => {
-    setIsGoingOut(prev => !prev)
-  }
+  const [isOn, setIsOn] = useState(true)
 
   
   return (
     <>
-      <main>
+      <main >
         <h1>Counter: {count}</h1>
         <button onClick={counter}>Increase</button>
         <hr />
@@ -25,6 +23,21 @@ const Lesson14prac = () => {
           onClick={() => setIsGoingOut(prev => !prev)}
           aria-label={`Current answer is ${isGoingOut ? "yes" : "no"}`}
         >{isGoingOut ? "yes" : "no"}</button>
+        <hr />
+        <div 
+          style={{
+            background: isOn ? "white" : "black",
+            color: isOn ? "black" : "white"
+          }}
+        >
+          <h1>{`Light is ${isOn ? "ON" : "OFF"}`}</h1>
+          <button 
+            onClick={() => setIsOn(prev => !prev)}
+          >{`Turn ${!isOn ? "ON" : "OFF"}`}</button>
+          <hr />
+        </div>
+        
+
       </main>
     </>
   )
