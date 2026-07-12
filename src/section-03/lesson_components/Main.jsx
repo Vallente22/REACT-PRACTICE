@@ -1,20 +1,31 @@
-const Main = () => {
-//map over the ingredient list for challenge in lesson6 and render them as list items
-const ingredients = ["Chicken", "Oregano", "Tomatoes"]
+import { useState } from "react"
 
-const ingredientsListItem = ingredients.map((ingredients) => {
-  return (
-    <li key={ingredients}>{ingredients}</li>
-  )
-})
-//lesson6 anOther challenge: add an onSubmit event listener on the form
-const handleSubmit = (event) => {
-  event.preventDefault()
-  const formData = new FormData(event.currentTarget)
-  const newIngredient = formData.get("ingredient")
-  ingredients.push(newIngredient);
-  console.log(ingredients)
-}
+const Main = () => {
+/**
+ * Challenge: Update our app so that when the user enters a
+ * new ingredient and submits the form, it adds that new
+ * ingredient to our list!
+ */
+  const [ingredients, setIngredients] = useState([])
+
+  const ingredientsListItem = ingredients.map((ingredients) => {
+    return (
+      <li key={ingredients}>{ingredients}</li>
+    )
+  })
+
+  const handleSubmit = (event) => {
+    /**
+     * Like before, don't worry about this FormData stuff yet.
+     * Just use the newIngredient below to help you finish the
+     * challenge.
+     */
+    event.preventDefault()
+    const formData = new FormData(event.currentTarget)
+    const newIngredient = formData.get("ingredient")
+
+    setIngredients(prev => [...prev, newIngredient])
+  }
 
   return (
     <main>
