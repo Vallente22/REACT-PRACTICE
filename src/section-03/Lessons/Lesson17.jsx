@@ -1,16 +1,11 @@
 import { useState } from "react";
 import "../lesson_styles/lesson17.css"
 const Lesson17 = () => {
-  /**
-     * Challenge: Convert the code below to use an array
-     * held in state instead of a local variable. Initialize 
-     * the state array as an empty array
-     * 
-     * Don't worry about fixing `addFavoriteThing` quite yet.
-     */
-  const myFavoriteThings = []
+  const [myFavoriteThings, setMyFavoriteThings] = useState([])
+
   const allFavoriteThings = ["💦🌹", "😺", "💡🫖", "🔥🧤", "🟤🎁", 
   "🐴", "🍎🥧", "🚪🔔", "🛷🔔", "🥩🍝"]
+  
   const thingsElements = myFavoriteThings.map(thing => <p key={thing}>{thing}</p>)
 
   function addFavoriteThing() {
