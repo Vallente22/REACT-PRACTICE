@@ -12,7 +12,13 @@ const Lesson14prac = () => {
   const [isOn, setIsOn] = useState(true)
 
   const [showSecret, setShowSecret] = useState(false)
+
+  const [isLiked, setIsLiked] = useState(false)
+
+  const [stepCounter, setStepCounter] = useState(0)
+
   
+
   return (
     <>
       <main >
@@ -40,7 +46,21 @@ const Lesson14prac = () => {
         <hr />
         <h1>React Challenge</h1>
         <p>{`${showSecret ? "The treasure is buried under the tree." : " "}`}</p>
-        <button onClick={() => setShowSecret (prev => !prev)}>{`${showSecret ? "Hide Secret" : "Show Secret"}`}</button>
+        <button 
+          onClick={() => setShowSecret (prev => !prev)}
+        >{`${showSecret ? "Hide Secret" : "Show Secret"}`}</button>
+        <hr />
+        <button 
+          onClick={() => setIsLiked(prev => !prev)}
+          aria-label={`Change reaction: ${isLiked ? "Unlike this post" : "Like this post"}`}
+        >{`${isLiked ? "❤️ Liked" : "♡ Like"}`}</button>
+        <hr />
+        <h1>{stepCounter}</h1>
+        <button onClick={() => setStepCounter(prev => prev + 1)}>+1</button>
+        <button onClick={() => setStepCounter(prev => prev + 5)}>+5</button>
+        <button onClick={() => setStepCounter(prev => prev + 10)}>+10</button>
+        <hr />
+        <h1></h1>
         
 
       </main>
