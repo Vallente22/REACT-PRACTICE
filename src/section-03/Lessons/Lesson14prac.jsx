@@ -11,6 +11,7 @@ const Lesson14prac = () => {
 
   const [isOn, setIsOn] = useState(true)
 
+  const [showSecret, setShowSecret] = useState(false)
   
   return (
     <>
@@ -26,16 +27,20 @@ const Lesson14prac = () => {
         <hr />
         <div 
           style={{
-            background: isOn ? "white" : "black",
+            backgroundColor: isOn ? "white" : "black",
             color: isOn ? "black" : "white"
           }}
         >
           <h1>{`Light is ${isOn ? "ON" : "OFF"}`}</h1>
           <button 
             onClick={() => setIsOn(prev => !prev)}
+            aria-label={`Toggle the light: ${isOn ? "ON" : "OFF"} `}
           >{`Turn ${!isOn ? "ON" : "OFF"}`}</button>
-          <hr />
         </div>
+        <hr />
+        <h1>React Challenge</h1>
+        <p>{`${showSecret ? "The treasure is buried under the tree." : " "}`}</p>
+        <button onClick={() => setShowSecret (prev => !prev)}>{`${showSecret ? "Hide Secret" : "Show Secret"}`}</button>
         
 
       </main>
