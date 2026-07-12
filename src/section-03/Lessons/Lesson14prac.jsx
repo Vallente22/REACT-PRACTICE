@@ -17,7 +17,9 @@ const Lesson14prac = () => {
 
   const [stepCounter, setStepCounter] = useState(0)
 
-  
+  const [temp, setTemp] = useState(25)
+
+
 
   return (
     <>
@@ -60,7 +62,9 @@ const Lesson14prac = () => {
         <button onClick={() => setStepCounter(prev => prev + 5)}>+5</button>
         <button onClick={() => setStepCounter(prev => prev + 10)}>+10</button>
         <hr />
-        <h1></h1>
+        <h1>{`${temp}°C`}</h1>
+        <button onClick={() => setTemp(prev => prev + 1)}>Hotter</button>
+        <button onClick={() => setTemp(prev => prev - 1)}>Colder</button>
         
 
       </main>
