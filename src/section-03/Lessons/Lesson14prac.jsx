@@ -17,6 +17,8 @@ const Lesson14prac = () => {
 
   const [evenOdd, setEvenOdd] = useState(0)
 
+  const [isLogIn, setIsLogIn] = useState(false)
+
   return (
     <>
       <main >
@@ -65,6 +67,9 @@ const Lesson14prac = () => {
         <h1>Number: {evenOdd}</h1>
         <h1>{evenOdd % 2 == 0 ? "Even" : "Odd"}</h1>
         <button onClick={() => setEvenOdd(prev => prev + 1)}>Next</button>
+        <hr />
+        <h1>{`${isLogIn ? "Welcome back!" : "Please log in"}`}</h1>
+        <button onClick={() => setIsLogIn(prev => !prev)}>{`${isLogIn ? "Logout" : "Login"}`}</button>
         
 
       </main>
