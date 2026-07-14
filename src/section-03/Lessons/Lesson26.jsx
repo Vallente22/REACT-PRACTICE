@@ -27,16 +27,16 @@ const Lesson22 = () => {
 
         <fieldset>
           <legend>Employment Status:</legend>
-          <label htmlFor="unemployed">
-            <input id="unemployed" type="radio" name="employmentStatus" value="unemployed" />
+          <label>
+            <input type="radio" name="employmentStatus" value="unemployed" />
             Unemployed
           </label>
-          <label htmlFor="part-time">
-            <input id="part-time" type="radio" name="employmentStatus" value="part-time" />
+          <label>
+            <input type="radio" name="employmentStatus" value="part-time" />
             Part-time
           </label>
-          <label htmlFor="full-time">
-            <input id="full-time" type="radio" name="employmentStatus" value="full-time" />
+          <label>
+            <input type="radio" name="employmentStatus" value="full-time" />
             Full-time
         </label>
         </fieldset>
