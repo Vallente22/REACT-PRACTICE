@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "../lesson_styles/lesson22.css"
 
 /**
@@ -30,6 +29,7 @@ const Lesson22 = () => {
 
         <label htmlFor="password">Password:</label>
         <input id="password" type="password" name="password" />
+        <br />
 
         <button type="submit">Submit</button>
       </form>
