@@ -1,28 +1,27 @@
 import "../lesson_styles/lesson22.css"
 
 /**
- * by default, the form is set to GET method if you dont specify what is it for
- * and will display whatever you put in the form on the url as it tries to look for whatever u 
- * put inside on some other site
- * by using POST method, your input wont be displayed in url
- * as it puts the info in a post request 
+ * form action allows to shorten the amount of code
  * 
+ * event.preventDefault() from using this to prevent page reload
+  const formEl = event.currentTarget from using this to be able to get the form element
+  const formData = new FormData("formEl") from using this to be able to get the data in form element
+  formEl.reset() from using this to reset the form after submitting information
+ * onSubmit={handleSubmit} method="POST" from using this to specify what we want the form to do
+ * to simply using action=""
  */
 const Lesson22 = () => {
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    const formEl = event.currentTarget
-    const formData = new FormData("formEl")
+  // changed from handleSubmit because React passes FormData directly instead of an event.
+  const signUp = (formData) => {
     const email = formData.get("email")
-    //submit info to backend
-    formEl.reset()
+    const password = formData.get("password")//part of a challenge
+    console.log(password)
   }
 
   return (
     <section>
       <h1>Signup form</h1>
-      <form onSubmit={handleSubmit} method="POST">
+      <form action={signUp}>
         <label htmlFor="email">Email:</label>
         <input id="email" type="email" name="email" />
         <br />
