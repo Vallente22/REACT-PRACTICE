@@ -1,7 +1,10 @@
 import { useState } from "react";
 import "../lesson_styles/lesson22.css"
 
-//create another label and input for password
+//input can be some type of button by putting 
+//submit on type but its better practice to put a button inside the form and put submit on type
+//<button type="submit">
+// <input type="submit" value="click" name="" id="" />
 const Lesson22 = () => {
   return (
     <section>
@@ -10,8 +13,11 @@ const Lesson22 = () => {
         <label htmlFor="email">Email:</label>
         <input id="email" type="email" name="email" />
         <br />
+
         <label htmlFor="password">Password:</label>
         <input id="password" type="password" name="password" />
+
+        <button type="submit">Submit</button>
       </form>
     </section>
     
