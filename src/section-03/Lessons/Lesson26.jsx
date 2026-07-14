@@ -2,7 +2,9 @@ import "../lesson_styles/lesson22.css"
 
 const Lesson22 = () => {
 /** 
- * challenge: get the value of radio button
+ * challenge: get the value of radio button // done
+ * another note for radio: defaultChecked is to radio buttons and checkboxes 
+ * what defaultValue is to text inputs.
  */
   const signUp = (formData) => {
     const email = formData.get("email")
