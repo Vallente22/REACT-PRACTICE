@@ -1,22 +1,17 @@
-import React from "react"
+import { useState } from "react"
 import "../lesson_styles/lesson19.css"
 import avatar from "../assets/user.png"
 import starFilled from "../assets/star-filled.png"
 import starEmpty from "../assets/star-empty.png"
 
 const Lesson19 = () => {
-  const [contact, setContact] = React.useState({
+  const [contact, setContact] = useState({
     firstName: "John",
     lastName: "Doe",
     phone: "+1 (212) 555-1212",
     email: "itsmyrealname@example.com",
     isFavorite: false
   })
-  /**
-   * Challenge: Fill in the values in the markup
-   * using the properties of our state object above
-   * (Ignore `isFavorite` for now)
-   */
 
   function toggleFavorite() {
     console.log("Toggle Favorite")
@@ -43,10 +38,10 @@ const Lesson19 = () => {
           />
           </button>
           <h2 className="name">
-            John Doe
+            {`${contact.firstName} ${contact.lastName}`}
           </h2>
-          <p className="contact">+1 (212) 555-1212</p>
-          <p className="contact">itsmyrealname@example.com</p>
+          <p className="contact">{contact.phone}</p>
+          <p className="contact">{contact.email}</p>
         </div>
 
       </article>
