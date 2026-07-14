@@ -13,8 +13,10 @@ const Lesson19 = () => {
     isFavorite: false
   })
 
+  //next challenge make it so the image can be toggled using ternary
+
   function toggleFavorite() {
-    console.log("Toggle Favorite")
+    setContact(prev => ({...prev, isFavorite: !prev.isFavorite }))
   }
 
   return (
@@ -28,12 +30,13 @@ const Lesson19 = () => {
         <div className="info">
           <button
             onClick={toggleFavorite}
-            aria-pressed={false}
+            aria-pressed={contact.isFavorite}
+            aria-label={contact.isFavorite ? "Removed from favorites" : "Add to favorites"}
             className="favorite-button"
           >
           <img
-            src={starEmpty}
-            alt="empty star icon"
+            src={contact.isFavorite ? starFilled : starEmpty}
+            alt={contact.isFavorite ? "filled star icon" : "empty star icon"}
             className="favorite"
           />
           </button>
