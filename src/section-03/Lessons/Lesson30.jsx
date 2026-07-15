@@ -10,7 +10,11 @@ const Lesson30 = () => {
   const signUp = (formData) => {
     const data = Object.fromEntries(formData)
     const dietaryData = formData.getAll("dietaryRestrictions")
-    console.log(dietaryData)
+    const allData = {
+      ...data,
+      dietaryData
+    }
+    console.log(allData)
   }
 
   return (
