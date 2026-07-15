@@ -5,6 +5,7 @@ import "../lesson_styles/lesson22.css"
  * in the checkbox(same issue in checkbox lesson where we have to use .getAll unlike
  * the other fields)
  * 
+ * challenge: retrieve the array of checked items from the dietaryRestrictions checkboxes
  */
 const Lesson30 = () => {
 
