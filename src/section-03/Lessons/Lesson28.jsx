@@ -4,7 +4,9 @@ const Lesson28 = () => {
 /** 
  * checkbox works almost the same way as radio, but will have to use .getAll
  * if we want to get the array of checked boxes.
- * defaultChecked also works just like in radio
+ * defaultChecked also works just like in radio.
+ * 
+ * 
  */
   const signUp = (formData) => {
     const email = formData.get("email")
@@ -44,7 +46,15 @@ const Lesson28 = () => {
         </fieldset>
 
         <label htmlFor="favColor">What is your favorite color?</label>
-        <select name="favColor" id="favColor"></select>
+        <select name="favColor" id="favColor">
+          <option value="">Red</option>
+          <option value="">Orange</option>
+          <option value="">Yellow</option>
+          <option value="">Green</option>
+          <option value="">Blue</option>
+          <option value="">Indigo</option>
+          <option value="">Violet</option>
+        </select>
 
         <button type="submit">Submit</button>
 
