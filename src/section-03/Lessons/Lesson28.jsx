@@ -43,6 +43,9 @@ const Lesson28 = () => {
         </label>
         </fieldset>
 
+        <label htmlFor="favColor">What is your favorite color?</label>
+        <select name="favColor" id="favColor"></select>
+
         <button type="submit">Submit</button>
 
       </form>
