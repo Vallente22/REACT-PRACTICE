@@ -4,13 +4,13 @@ import "../lesson_styles/lesson22.css"
  * Object.fromEntries()as a shortcut. however, it wont pick up all of the choices checked 
  * in the checkbox(same issue in checkbox lesson where we have to use .getAll unlike
  * the other fields)
- * 
- * challenge: retrieve the array of checked items from the dietaryRestrictions checkboxes
  */
 const Lesson30 = () => {
 
   const signUp = (formData) => {
-    console.log(Object.fromEntries(formData))
+    const data = Object.fromEntries(formData)
+    const dietaryData = formData.getAll("dietaryRestrictions")
+    console.log(dietaryData)
   }
 
   return (
