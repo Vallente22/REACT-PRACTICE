@@ -1,4 +1,4 @@
-import pads from "./pads"
+import pads from "../lesson_components/pads"
 
 export default function App() {
   /**
