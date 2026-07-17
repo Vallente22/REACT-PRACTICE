@@ -1,9 +1,9 @@
-import Lesson41 from './Lessons/Lesson41.jsx';
+import Lesson42 from './Lessons/Lesson42.jsx';
 
 const App = () => {
   return (
     <>
-      <Lesson41 />
+      <Lesson42 />
     </>
   )
 }
