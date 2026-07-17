@@ -2,22 +2,19 @@ import { useState } from "react"
 import pads from "../lesson_components/pads"
 import '../lesson_styles/padschallenge.css'
 
-const Lesson44 = () => {
+const Lesson44 = (props) => {
   /**
-   * Challenge part 1: DONE
-   * 1. Initialize state with the default value of the
-   *    array pulled in from pads.js
-   * 2. Map over that state array and display each one
-   *    as a <button> (CSS is already written for you)
-   *    (Don't worry about using the "on" or "color" 
-   *    properties yet) 
+   * Challenge: use a ternary to determine the backgroundColor
+   * of the buttons
+   * If darkMode is true, set them to "#222222"
+   * If darkMode is false, set them to "#cccccc"
    */
 
   const [padsState, setPadsState] = useState(pads)
 
   const buttonElements = padsState.map((padsItem) => {
     return (
-      <button key={padsItem.id}></button>
+      <button style={{backgroundColor: props.darkMode === true ? "#222222" : "#cccccc"}} key={padsItem.id}></button>
     )
   })
 
