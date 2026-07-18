@@ -2,14 +2,11 @@ import { useState } from "react";
 
 const Pad = (props) => {
   /**
-   * Challenge: Create state controlling whether
-   * this pad is "on" or "off". Use the incoming
-   * `props.on` to determine the initial state.
+   * Challenge: Create a toggle() function that logs
+   * "clicked!" to the console
    * 
-   * Create an event listener so when the pad is clicked,
-   * it toggles from "on" to "off".
-   * 
-   * Goal: clicking each pad should toggle it on and off.
+   * Pass that function down to each of the Pad components
+   * and set it up so when they get clicked, the function runs
    */
 
   const [on, setOn] = useState(props.on)
