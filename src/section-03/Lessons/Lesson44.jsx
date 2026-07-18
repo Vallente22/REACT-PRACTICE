@@ -20,7 +20,7 @@ const Lesson44 = (props) => {
 
   const buttonElements = padsState.map((padsItem, index) => {
     return (
-      <Pad key={padsItem.id} color={padsItem.color} />
+      <Pad key={padsItem.id} color={padsItem.color} on={padsItem.on} />
     )
   })
 
