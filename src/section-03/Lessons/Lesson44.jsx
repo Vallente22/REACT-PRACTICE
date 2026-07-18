@@ -12,9 +12,11 @@ const Lesson44 = (props) => {
 
   const [padsState, setPadsState] = useState(pads)
 
-  const buttonElements = padsState.map((padsItem) => {
+  const buttonElements = padsState.map((padsItem, index) => {
     return (
-      <button style={{backgroundColor: props.darkMode === true ? "#222222" : "#cccccc"}} key={padsItem.id}></button>
+      <button style={{backgroundColor: props.darkMode === true ? "#222222" : "#cccccc",
+        backgroundColor: index % 2 === 0 ? "#333333" : "#cccccc"
+      }} key={padsItem.id}></button>
     )
   })
 
