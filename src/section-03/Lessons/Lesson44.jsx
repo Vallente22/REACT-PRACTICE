@@ -8,23 +8,35 @@ const Lesson44 = (props) => {
   const [padsState, setPadsState] = useState(pads)
 
   /**
-   * Challenge: Create a toggle() function that logs
-   * "clicked!" to the console
-   * 
-   * Pass that function down to each of the Pad components
-   * and set it up so when they get clicked, the function runs. DONE
+   * Challenge: DONE
+   * Call setPads to update the state of the one pad that was
+   * clicked. Map over the previous pads array, and if the current
+   * item you're iterating over has the same id as the `id` passed
+   * to this function, then return a new object with the `on` value
+   * set to the opposite of what it was before.
+   * Otherwise (if the ids don't match), just return the previous
+   * item as it was, unchanged. 
    */
 
-  const togglePad = () => {
-    console.log("clicked")
-  }
 
-  const buttonElements = padsState.map((padsItem, index) => {
+  //map over the pads array, and if current item has the same id as the one passed
+  //to this function, then flip its `on` value
+  const togglePad = (clickedId) => {
+    setPadsState(prevPads => prevPads.map(pads => {
+      if (clickedId === pads.id) {
+        return ({
+          ...pads,
+          on: !pads.on
+        })
+      } return pads
+    })
+  )}
+
+  const buttonElements = padsState.map((padsItem) => {
     return (
-      <Pad key={padsItem.id} color={padsItem.color} on={padsItem.on} toggle={togglePad} />
+      <Pad key={padsItem.id} id={padsItem.id} color={padsItem.color} on={padsItem.on} toggle={togglePad} />
     )
   })
-
 
   return (
     <main>
