@@ -23,14 +23,9 @@ const Lesson44 = (props) => {
   //to this function, then flip its `on` value
   const togglePad = (clickedId) => {
     setPadsState(prevPads => prevPads.map(pads => {
-      if (clickedId === pads.id) {
-        return ({
-          ...pads,
-          on: !pads.on
-        })
-      } return pads
-    })
-  )}
+      return pads.id === clickedId ? {...pads, on: !pads.on} : pads
+    }))
+  }
 
   const buttonElements = padsState.map((padsItem) => {
     return (
