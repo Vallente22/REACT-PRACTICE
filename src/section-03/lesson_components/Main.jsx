@@ -3,25 +3,22 @@ import ClaudeRecipe from "./ClaudeRecipe"
 import IngredientsList from "./IngredientsList"
 import { getRecipeFromLlama } from "../ai"
 
-  /**
-   * Challenge: Get a recipe from the AI!
-   * 
-   * This will be a bit harder of a challenge that will require you
-   * to think critically and synthesize the skills you've been
-   * learning and practicing up to this point.
-   * 
-   * We'll start with a mini-quiz:
-   * 
-   * 1. Think about where the recipe response should live and how you're
-   *    going to make sure it doesn't disappear between each state change in
-   *    the app. (I don't mean between refreshes of your mini-browser.
-   *    You don't need to save this to localStorage or anything more permanent
-   *    than in React's memory for now.)
-   *  - save response in react state
-   * 
-   * 2. What action from the user should trigger getting the recipe?
-   *  - when the button to get recipe is clicked
-   */
+/**
+ * Challenge: Get a recipe from the AI!
+ * 
+ * This will be a bit harder of a challenge that will require you
+ * to think critically and synthesize the skills you've been
+ * learning and practicing up to this point.
+ * 
+ * Using either the `getRecipeFromChefClaude` function or the 
+ * `getRecipeFromMistral` function, make it so that when the user
+ * clicks "Get a recipe", the text response from the AI is displayed
+ * in the <ClaudeRecipe> component.
+ * 
+ * For now, just have it render the raw markdown that the AI returns,
+ * don't worry about making it look nice yet. (We're going to use a
+ * package that will render the markdown for us soon.)
+ */
 
 const Main = () => {
 
@@ -32,10 +29,11 @@ const Main = () => {
     setIngredients(prev => [...prev, newIngredient])
   }
 
-  const [recipeShown, setRecipeShown] = useState(false)
+  const [recipe, setRecipe] = useState("")
 
-  const getRecipe = () => {
-    setRecipeShown(prev => !prev)
+  const getRecipe = async () => {
+    const recipeMarkdown = await getRecipeFromLlama(ingredients)
+    setRecipe(recipeMarkdown)
   }
 
   return (
@@ -50,7 +48,7 @@ const Main = () => {
         <button>Add ingredient</button>
       </form>
       {ingredients.length > 0 && <IngredientsList ingredients={ingredients} getRecipe={getRecipe} />}
-      {recipeShown && <ClaudeRecipe />}
+      {recipe.length > 0 && <ClaudeRecipe recipe={recipe} />}
     </main>
   )
 }
