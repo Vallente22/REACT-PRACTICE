@@ -4,7 +4,9 @@ export default function ClaudeRecipe(props) {
 
   return (
     <section className="suggested-recipe-container">
-      <Markdown>{props.recipe}</Markdown>
+      <Markdown>
+        {props.recipe}
+      </Markdown>
     </section>
   )
 }
