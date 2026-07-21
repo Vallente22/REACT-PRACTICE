@@ -1,6 +1,28 @@
 import { useState } from "react"
 
 const Main = () => {
+  /**
+   * Challenge: clean up our code!
+   * Let's make a couple new components to make things a
+   * little cleaner. (Notice: I'm not suggesting what we
+   * have now is bad or wrong. I'm mostly finding an excuse
+   * to get in some hands-on practice 🙂)
+   * 
+   * 1. Move the entire recipe <section> into its own
+   *    ClaudeRecipe component
+   * 2. Move the list of ingredients <section> into its
+   *    own IngredientsList component.
+   * 
+   * While you're considering how to structure things, consider
+   * where state is, think about if it makes sense or not to
+   * move it somewhere else, how you'll communicate between
+   * the parent/child components, etc.
+   * 
+   * The app should function as it currently does when you're
+   * done, so there will likely be some extra work to be done
+   * beyond what I've listed above.
+   */
+
   const [ingredients, setIngredients] = useState([])
 
   const ingredientsListItems = ingredients.map((ingredients) => {
@@ -19,19 +41,6 @@ const Main = () => {
   const getRecipe = () => {
     setRecipeShown(prev => !prev)
   }
-
-  /**
-   * Challenge:
-   * 1. Create a boolean state that, for now, will represent whether
-   *    we've gotten a recipe back from the "chef". Default to `false`.
-   *    Can call it `recipeShown`.
-   * 2. Grab the markup in recipeCode.md and paste it below. This will
-   *    be a placeholder for the content that will come back from the 
-   *    chef once we set up that feature.
-   * 3. When the user clicks the "Get a recipe" button, flip the
-   *    `recipeShown` state to true.
-   * 4. Only display the recipe code content if `recipeShown` is true.
-   */
 
   return (
     <main>

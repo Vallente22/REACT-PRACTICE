@@ -1,9 +1,9 @@
-import Lesson44 from './Lessons/Lesson44.jsx';
+import Lesson51 from './Lessons/Lesson51.jsx';
 
 const App = () => {
   return (
     <>
-      <Lesson44 darkMode={false} />
+      <Lesson51 />
     </>
   )
 }
