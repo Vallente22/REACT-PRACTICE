@@ -8,13 +8,6 @@ export default function Main() {
     imgUrl: "http://i.imgflip.com/1bij.jpg"
   })
 
-  /**
-   * Challenge: update the topText value in the meme state
-   * object every time the topText input box is changed
-   * 
-   * Note: don't worry about bottomText at this point. DONE
-   */
-  
   const handleChange = (event) => {
     const {value, name} = event.currentTarget
     setMeme(prev => {

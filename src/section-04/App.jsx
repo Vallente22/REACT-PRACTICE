@@ -1,9 +1,9 @@
-import MemeGenerator from './projects/MemeGenerator.jsx';
+import FetchDataReactPrac from './projects/FetchDataReactPrac.jsx';
 
 const App = () => {
   return (
     <>
-      <MemeGenerator />
+      <FetchDataReactPrac />
     </>
   )
 }
