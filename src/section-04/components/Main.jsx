@@ -7,7 +7,24 @@ export default function Main() {
     bottomText: "Walk into Mordor",
     imgUrl: "http://i.imgflip.com/1bij.jpg"
   })
+
+  /**
+   * Challenge: update the topText value in the meme state
+   * object every time the topText input box is changed
+   * 
+   * Note: don't worry about bottomText at this point. DONE
+   */
   
+  const handleChange = (event) => {
+    const {value} = event.currentTarget
+    setMeme(prev => {
+      return {
+        ...prev,
+        topText: value
+      }
+    })
+  }
+
   return (
     <main>
       <div className="form">
@@ -16,6 +33,7 @@ export default function Main() {
             type="text"
             placeholder="One does not simply"
             name="topText"
+            onChange={handleChange}
           />
         </label>
 
@@ -24,6 +42,7 @@ export default function Main() {
             type="text"
             placeholder="Walk into Mordor"
             name="bottomText"
+            onChange={handleChange}
           />
         </label>
         <button>Get a new meme image 🖼</button>
