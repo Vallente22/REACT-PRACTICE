@@ -8,16 +8,16 @@ export default function fetchDataReactPrac(props) {
   console.log("rendered")
 
   /**
-   * challenge part 2: 
+   * challenge part 2: DONE
    * combine count state with request url
    * so pressing the button will get new character from
    * the starwars API
    */
   useEffect(() => {
-    fetch("https://swapi.dev/api/people/1")
+    fetch(`https://swapi.dev/api/people/${count}`)
       .then(res => res.json())
       .then(data => setStarWarsData(data))
-  }, [])
+  }, [count])
   
   return (
     <div>
