@@ -7,13 +7,12 @@ export default function fetchDataReactPrac(props) {
 
   console.log("rendered")
 
- 
+  //redo the useEffect
   useEffect(() => {
     fetch("https://swapi.dev/api/people/1")
       .then(res => res.json())
       .then(data => setStarWarsData(data))
-  }, [count])
-  
+  }, [])
   
   return (
     <div>
