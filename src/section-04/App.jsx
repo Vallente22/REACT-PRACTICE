@@ -1,9 +1,9 @@
-import MemeGenerator from './projects/MemeGenerator.jsx';
+import WindowTracker from './projects/WindowTracker.jsx';
 
 const App = () => {
   return (
     <>
-      <MemeGenerator />
+      <WindowTracker />
     </>
   )
 }
