@@ -1,5 +1,5 @@
-import Header from "../components/Header"
-import Main from "../components/Main"
+import Header from "../components/MemeGeneratorComponents/Header"
+import Main from "../components/MemeGeneratorComponents/Main"
 
 //changes are in Main component
 
