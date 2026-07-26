@@ -21,11 +21,20 @@ export default function WindowTrackerComponent() {
    */
   
   useEffect(() => {
-    window.addEventListener("resize", () => {
+    // Function that runs whenever the browser window is resized
+    const watchWindowWidth = () => {
       setWindowWidth(window.innerWidth)
-      console.log("Resized!")
-    })
+    }
+
+    // Tell the browser to start listening for resize events
+    window.addEventListener("resize", watchWindowWidth)
+
+    // When the component is removed, tell the browser to stop listening
+    return () => {
+      window.removeEventListener("resize", watchWindowWidth)
+    }
   }, [])
+
   return(
     <h1>Window width: {windowWidth}</h1>
   )
