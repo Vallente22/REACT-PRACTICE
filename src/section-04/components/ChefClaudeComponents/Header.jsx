@@ -1,7 +1,9 @@
+import ChefClaudeIcon from "../../assets/chef-claude-icon.png";
+
 const Header = () => {
   return (
     <header className="header">
-      <img className="header-image" src="src\section-03\assets\chef-claude-icon.png" alt="Chef Claude Logo" />
+      <img className="header-image" src={ChefClaudeIcon} alt="Chef Claude Logo" />
       <h1 className="header-title">Chef Claude</h1>
     </header>
   )
