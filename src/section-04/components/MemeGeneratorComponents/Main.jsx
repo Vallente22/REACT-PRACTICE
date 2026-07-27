@@ -20,19 +20,11 @@ export default function Main() {
 
   const [allMemes, setAllMemes] = useState([])
   /**
-   * Challenge:
-   * Get an array of memes from the imgflip API as soon as
-   * this component renders for the first time.
-   * Check the imgflip documentation for the correct URL.
-   * Save the array of memes (not the whole response
-   * data) to state. (For this app, we'll randomly choose
-   * one of the memes from this array when the user clicks
-   * the "Get a new meme image" button, but we'll do that in
-   * a separate challenge.)
-   * 
-   * Hint: for now, don't try to use an async/await function.
-   * Instead, use `.then()` to resolve the promises
-   * from using `fetch`. We'll learn why after this challenge.
+   * Challenge: Get a random image from the array of
+   * allMemes when the user clicks the button. Once
+   * you've gotten a random image from the array, make
+   * sure to write the code that will display that
+   * random meme image to the page.
    */
 
   useEffect(() => {
@@ -41,6 +33,17 @@ export default function Main() {
       .then(data => setAllMemes(data.data.memes))
   }, [])
 
+  const getRandomMeme = () => {
+    const randomMemeIndex = Math.floor(Math.random() * allMemes.length)
+    const randomMeme = allMemes[randomMemeIndex] 
+
+    setMeme(prev => {
+      return {
+        ...prev,
+        imgUrl: randomMeme.url
+      }
+    })
+  }
 
   return (
     <main>
@@ -64,7 +67,7 @@ export default function Main() {
             value={meme.bottomText}
           />
         </label>
-        <button>Get a new meme image 🖼</button>
+        <button onClick={getRandomMeme}>Get a new meme image 🖼</button>
       </div>
       <div className="meme">
         <img src={meme.imgUrl} />
