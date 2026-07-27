@@ -1,9 +1,9 @@
-import MemeGenerator from './projects/MemeGenerator.jsx';
+import ChefClaude from './projects/ChefClaude.jsx';
 
 const App = () => {
   return (
     <>
-      <MemeGenerator />
+      <ChefClaude />
     </>
   )
 }
