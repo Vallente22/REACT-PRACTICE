@@ -1,24 +1,7 @@
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import ClaudeRecipe from "../ChefClaudeComponents/ClaudeRecipe"
 import IngredientsList from "../ChefClaudeComponents/IngredientsList"
 import { getRecipeFromLlama } from "../../ai"
-
-/**
- * Challenge: Get a recipe from the AI!
- * 
- * This will be a bit harder of a challenge that will require you
- * to think critically and synthesize the skills you've been
- * learning and practicing up to this point.
- * 
- * Using either the `getRecipeFromChefClaude` function or the 
- * `getRecipeFromMistral` function, make it so that when the user
- * clicks "Get a recipe", the text response from the AI is displayed
- * in the <ClaudeRecipe> component.
- * 
- * For now, just have it render the raw markdown that the AI returns,
- * don't worry about making it look nice yet. (We're going to use a
- * package that will render the markdown for us soon.)
- */
 
 const Main = () => {
 
@@ -30,6 +13,14 @@ const Main = () => {
   }
 
   const [recipe, setRecipe] = useState("")
+
+  const recipeSection = useRef(null)
+
+  useEffect(() => {
+    if (recipe !== "" && recipeSection.current !== null) {
+      recipeSection.current.scrollIntoView()
+    }
+  }, [recipe])
 
   const getRecipe = async () => {
     const recipeMarkdown = await getRecipeFromLlama(ingredients)
@@ -47,7 +38,7 @@ const Main = () => {
         />
         <button>Add ingredient</button>
       </form>
-      {ingredients.length > 0 && <IngredientsList ingredients={ingredients} getRecipe={getRecipe} />}
+      {ingredients.length > 0 && <IngredientsList ingredients={ingredients} getRecipe={getRecipe} ref={recipeSection} />}
       {recipe.length > 0 && <ClaudeRecipe recipe={recipe} />}
     </main>
   )
